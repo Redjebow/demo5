@@ -1,6 +1,6 @@
 package com.example.demo3;
 
-public class CatInfo {
+public class Cat {
     private String fact;
     private int length;
 

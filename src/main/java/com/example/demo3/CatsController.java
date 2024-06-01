@@ -15,9 +15,20 @@ public class CatsController {
     }
 
 
-    @GetMapping("/info")
-    public ResponseEntity<CatInfo> getCatInfo() {
-        CatInfo catInfo = catClient.getCatsInfo();
+    @GetMapping("/fact")
+    public ResponseEntity<Cat> getCatInfo() {
+        Cat cat = catClient.getCatsInfo();
+        return ResponseEntity.ok(cat);
+    }
+
+    @GetMapping("/breed")
+    public ResponseEntity<BreedsResponse> getCatBreed() {
+        BreedsResponse breedInfo = catClient.getCatsBreeds();
+        return ResponseEntity.ok(breedInfo);
+    }
+    @GetMapping("/facts")
+    public ResponseEntity<CatResponse> getAllCatsFacts() {
+        CatResponse catInfo = catClient.getAllCatsInfo();
         return ResponseEntity.ok(catInfo);
     }
 }
